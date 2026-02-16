@@ -1,0 +1,11 @@
+--- a/debian/rules	2026-02-16 16:26:12.034052621 +0100
++++ b/debian/rules	2026-02-16 16:26:33.270646223 +0100
+@@ -27,7 +27,7 @@
+ 	dh_testdir
+ 	dh_update_autotools_config
+ 	dh_autoreconf
+-	CPPFLAGS="$(shell dpkg-buildflags --get CPPFLAGS)" CFLAGS="$(shell dpkg-buildflags --get CFLAGS)" LDFLAGS="$(shell dpkg-buildflags --get LDFLAGS)" dh_auto_configure -- --prefix=/usr --exec-prefix=/usr --sbindir=/usr/sbin --mandir=/usr/share/man --datadir=/usr/share
++	CPPFLAGS="$(shell dpkg-buildflags --get CPPFLAGS)" CFLAGS="$(shell dpkg-buildflags --get CFLAGS)" LDFLAGS="$(shell dpkg-buildflags --get LDFLAGS)" dh_auto_configure -- --prefix=/usr --exec-prefix=/usr --sbindir=/usr/sbin --mandir=/usr/share/man --datadir=/usr/share --without-xen
+ 	touch configure-stamp
+
+ build: build-arch build-indep
